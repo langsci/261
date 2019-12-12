@@ -1,23 +1,9 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%     Language Science Press Master File       %%%
-%%%              edited volumes                  %%%
-%%%         follow the instructions below        %%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-% Everything following a % is ignored
-% Some lines start with %. Remove the % to include them
-
 \documentclass[output=book,collection,collectionchapter,nonflat,modfonts
             ,colorlinks, citecolor=brown
             ,multiauthors %% remove this line if only one editor
             % ,draft,draftmode
 		  ]{langsci/langscibook}                                 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% put all additional commands you need in the 
-% following files. If you do not know what this might 
-% mean, you can safely ignore this section
-
 \providecommand{\LastRefSteppedCounter}{}
 
 \input{localmetadata.tex}
@@ -40,17 +26,14 @@
 \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
 {\sloppy\tableofcontents}
 
-% sections without authors
-\include{chapters/preface}
+% sections without authors 
 \include{chapters/acknowledgments}
 
-% %% Additional prefaces and/or introductions that also have authors
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode. 
-\includepaper{chapters/prefaceEd}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode 
-\setcounter{chapter}{0} % Reset the chapter counter so that preceding prefaces are not counted
-
-
+% % %% Additional prefaces and/or introductions that also have authors
+% \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode. 
+% \includepaper{chapters/prefaceEd}
+% \lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode 
+% \setcounter{chapter}{0} % Reset the chapter counter so that preceding prefaces are not counted
 
 \mainmatter           
 \typeout{mainmatter starts at \therealpage}
