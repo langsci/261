@@ -1,8 +1,8 @@
-\documentclass[output=book,collection,collectionchapter,nonflat,modfonts
-            ,colorlinks, citecolor=brown
-            ,multiauthors %% remove this line if only one editor
-            % ,draft,draftmode
-		  ]{langsci/langscibook}                                 
+\documentclass[output=book,collection,collectionchapter,collectionchaptertoc,multiauthors
+%             ,colorlinks, citecolor=brown
+%             ,draft
+%             ,draftmode
+		  ]{langscibook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \providecommand{\LastRefSteppedCounter}{}
 
@@ -12,8 +12,8 @@
 \input{localcommands.tex} 
 \bibliography{localbibliography}
 
-\usepackage{csquotes}
 
+\WarningFilter{scrbase}{Usage of}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Frontmatter                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,19 +21,8 @@
 \begin{document}         
 \maketitle                
 \frontmatter
-% %% uncomment if you have preface and/or acknowledgements
-
 \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
 {\sloppy\tableofcontents}
-
-% sections without authors 
-\include{chapters/acknowledgments}
-
-% % %% Additional prefaces and/or introductions that also have authors
-% \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode. 
-% \includepaper{chapters/prefaceEd}
-% \lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode 
-% \setcounter{chapter}{0} % Reset the chapter counter so that preceding prefaces are not counted
 
 \mainmatter           
 \typeout{mainmatter starts at \therealpage}
@@ -41,21 +30,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Chapters                         %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-\includepaper{chapters/01_bergqvist} 
-\includepaper{chapters/02_grzech} 
+
+
+
+\renewcommand{\lsChapterFooterSize}{\footnotesize}
+\includepaper{chapters/01_bergqvist}
+\includepaper{chapters/02_grzech}
 \includepaper{chapters/03_rumsey}
 \includepaper{chapters/04_lum}
-\includepaper{chapters/05_liljegren} 
-\includepaper{chapters/06_gonzales-castano} 
+\includepaper{chapters/05_liljegren}
+\includepaper{chapters/06_gonzales-castano}
 \includepaper{chapters/07_basso}
 \includepaper{chapters/08_quartararo}
 \includepaper{chapters/09_widmer}
- 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Backmatter                       %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% There is normally no need to change the backmatter section
+\sloppy
 \input{backmatter.tex}	
-\end{document}  
+\end{document}

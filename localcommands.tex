@@ -15,3 +15,21 @@
 
 \newcommand{\langscidata}[1]{\pgfplotstableread{#1}\mydata;}
 
+\newcommand{\markuptitle}[2]{
+  \title{\texorpdfstring{#1}{#2}}
+  \shorttitlerunninghead{#2}
+  \renewcommand{\lsChapterFooterSize}{\scriptsize}
+  \renewcommand{\lsCollectionPaperFooterTitle}{Add\noexpand\texttt{\textbackslash renewcommand\{\textbackslash lsCollectionPaperFooterTitle\}\{A new theory of \textbackslash noexpand\textbackslash textit\{This\} and \textbackslash noexpand\textbackslash textit\{that\}\}} to preamble}
+}
+
+% \DeclareCiteCommand{\fullciteFooter}
+%         {\defcounter{maxnames}{\blx@maxbibnames}%
+%             \usebibmacro{prenote}}
+%         {\usedriver
+%             {\DeclareNameAlias{sortname}{default}}
+%             {\thefield{entrytype}}}
+%         {\multicitedelim}
+%         {\usebibmacro{postnote}}
+% \renewcommand{\lsCollectionPaperCitationText}{\fullciteFooter{#1footer}}
+
+\newcommand{\citealtv}[1]{\citeauthor{#1} \citeyear*{#1} [this volume]}

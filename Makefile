@@ -34,11 +34,17 @@ main.snd: main.bbl
 	sed -i 's/.*Embassy.*//' main.adx
 	sed -i 's/.*Association.*//' main.adx
 	sed -i 's/.*Commission.*//' main.adx
+	sed -i 's/.*ASALE*//' main.adx
+	sed -i 's/.*Estudis*//' main.adx
+	sed -i 's/.*RAE*//' main.adx
+	sed -i 's/.*Asamblea*//' main.adx
+	sed -i 's/.*Academia*//' main.adx
+	sed -i 's/.*Instituto*//' main.adx
+	sed -i 's/.*Universidad*//' main.adx
+	sed -i 's/\\MakeCapital//' main.adx
 	python3 fixindex.py
 	mv mainmod.adx main.adx
 	makeindex -o main.and main.adx
-	makeindex -o main.lnd main.ldx
-	makeindex -o main.snd main.sdx 
 	xelatex main 
  
 
@@ -95,7 +101,7 @@ paperhive:
 		
 firstedition:
 	git checkout gh-pages
-	git pull 
+	git pull origin gh-pages
 	basename `pwd` > ID
 	python getfirstedition.py  `cat ID`
 	git add first_edition.pdf 
